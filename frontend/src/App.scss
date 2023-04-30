@@ -1,7 +1,37 @@
-div{
-  background-color: aliceblue;
+//My Sass files
+@import "styles/colorPalette.scss";
+@import "styles/sizes.scss";
+
+//Google font
+@import url('https://fonts.googleapis.com/css2?family=Comme:wght@400;700&display=swap');
+
+body{
+  margin: 0 auto;
+  font-family: 'Comme', sans-serif;
+}
+
+header{
+  background-color: $secondary;
+  color: $primary;
 
   h1{
-    color: aquamarine;
+    margin: 0;
+  }
+
+  nav{
+    list-style: none;
+  }
+}
+
+footer{
+  background-color: $secondary;
+  color: $primary;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  a{
+    color: rgb(255, 255, 26);
   }
 }
