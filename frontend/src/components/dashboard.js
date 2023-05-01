@@ -9,14 +9,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 export default function Dashboard() {
   return (
     <Router>
-    <Header/>
+      <Header />
       <Routes>
         <Route path="/gameshop" element={<GameShop />} />
         <Route path="/mygames" element={<MyGames />} />
         <Route path="/myfavorites" element={<MyFavorites />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }
-
