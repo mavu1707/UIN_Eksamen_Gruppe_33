@@ -1,4 +1,3 @@
-//My Sass files
 @import "styles/colorPalette.scss";
 @import "styles/sizes.scss";
 
@@ -99,7 +98,8 @@ footer{
   .menu-toggle {
     display: flex;
     justify-content: end;
-    padding-right: 1rem;
+    padding-right: 2rem;
+    align-items: center;
   }
   
   nav {
