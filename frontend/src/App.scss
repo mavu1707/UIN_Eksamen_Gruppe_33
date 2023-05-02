@@ -13,10 +13,11 @@ body{
 header{
   background-color: $secondary;
 
-  h1{
+  .Logo{
+    height: 8vmin;
     margin: 0 auto;
-    max-width: $maxWidth;
     padding-top: 2rem;
+    padding-left: 10rem;
   }
 
   a{

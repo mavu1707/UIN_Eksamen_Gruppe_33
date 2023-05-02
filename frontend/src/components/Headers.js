@@ -10,7 +10,9 @@ export default function Header() {
 
   return (
     <header>
-      <h1><Link to="/" >Pixel Palace</Link></h1>
+    <Link to="/">
+      <img className="Logo" src="../img/pixel_palace_logo.png" alt="Pixel Palace logo" />
+    </Link>
       <div className="menu-toggle" onClick={toggleMenu}>
         <div className="hamburger"></div>
       </div>
