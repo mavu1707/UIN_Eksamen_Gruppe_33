@@ -6,7 +6,7 @@ export default function Header() {
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
-  };
+  }
 
   return (
     <header>
