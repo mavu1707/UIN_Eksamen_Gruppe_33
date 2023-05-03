@@ -4,6 +4,7 @@ import GameShop from './GameShop';
 import MyGames from './MyGames';
 import MyFavorites from './MyFavorites';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import FeaturedGames from "./FeaturedGames";
 
 
 export default function Dashboard() {
@@ -15,6 +16,7 @@ export default function Dashboard() {
         <Route path="/mygames" element={<MyGames />} />
         <Route path="/myfavorites" element={<MyFavorites />} />
       </Routes>
+      <FeaturedGames/>
       <Footer />
     </Router>
   );

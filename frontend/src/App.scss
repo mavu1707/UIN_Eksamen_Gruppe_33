@@ -44,10 +44,25 @@ header{
   }
 }
 
+article{
+  background-color: aqua;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  img{
+    max-width: 400px;
+  }
+}
+
+.game-card-container {
+  display: flex;
+  gap: 1rem;
+}
+
+
 footer{
   background-color: $secondary;
   color: $primary;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
