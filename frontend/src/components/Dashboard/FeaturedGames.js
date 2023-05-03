@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import GameCard from './GameCard';
+import GameCard from '../GameCard';
 
 export default function FeaturedGames() {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState([])
 
   useEffect(() => {
     fetch('https://api.rawg.io/api/games?key=5ccfb72ca6634a3bbf2e095d139c75c9&page_size=3')
+
       .then((response) => response.json())
       .then((data) => {
         const featuredGames = data.results;
         setGames(featuredGames);
-      });
-  }, []);
+      })
+      
+  }, [])
 
   return (
     <article className="featured-games">

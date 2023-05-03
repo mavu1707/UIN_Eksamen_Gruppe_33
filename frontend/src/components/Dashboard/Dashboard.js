@@ -1,8 +1,8 @@
-import Footer from "../components/Footer";
-import Header from "./Headers";
-import GameShop from './GameShop';
-import MyGames from './MyGames';
-import MyFavorites from './MyFavorites';
+import Footer from "../Dashboard/Footer";
+import Header from "../Dashboard/Headers"
+import GameShop from '../GameShop/GameShop';
+import MyGames from '../MyGames/MyGames';
+import MyFavorites from '../Favorites/MyFavorites';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FeaturedGames from "./FeaturedGames";
 
