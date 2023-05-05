@@ -13,7 +13,7 @@ export default function FeaturedGames() {
         setGames(featuredGames);
       })
       
-  }, [])
+  }, []);
 
   return (
     <article className="featured-games">

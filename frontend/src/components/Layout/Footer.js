@@ -7,5 +7,5 @@ export default function Footer(){
         <a href="https://rawg.io/">https://rawg.io/</a>
       </div>
     </footer>
-  )
+  );
 }
