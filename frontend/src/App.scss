@@ -75,11 +75,12 @@ article{
 footer{
   background-color: $secondary;
   color: $text;
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
   display: flex;
+  margin-top: 3rem;
 
   div{
     max-width: $maxWidth;
