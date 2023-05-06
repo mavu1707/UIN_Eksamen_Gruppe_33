@@ -2,21 +2,20 @@ import React, { useEffect, useState } from 'react';
 import GameCard from '../GameCard';
 
 export default function FeaturedGames() {
-  const [games, setGames] = useState([])
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
-    fetch('https://api.rawg.io/api/games?key=5ccfb72ca6634a3bbf2e095d139c75c9&page_size=3')
-
+    fetch('https://api.rawg.io/api/games?key=5ccfb72ca6634a3bbf2e095d139c75c9&dates=2023-01-01,2023-05-19&page_size=3')
       .then((response) => response.json())
       .then((data) => {
-        const featuredGames = data.results;
-        setGames(featuredGames);
-      })
-      
+        const newestGames = data.results;
+        setGames(newestGames);
+      });
   }, []);
 
   return (
     <article className="featured-games">
+      <h1>Game Shop</h1>
       <div className="game-card-container">
         {games.map((game) => (
           <GameCard

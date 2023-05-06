@@ -62,7 +62,50 @@ article{
   }
 
   img{
-    max-width: 350px;
+    max-width: 300px;
+  }
+}
+
+.featured-games {
+  background-color: $back;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+
+.my-games-dashboard {
+  background-color: $back;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: center;
+
+  .game-card-container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 4rem;
+  }
+}
+
+.my-favorites-dashboard {
+  background-color: $back;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  width: 350px;
+
+  .game-card-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+
+    .game-card {
+      width: 300px;
+    }
   }
 }
 
@@ -70,7 +113,6 @@ article{
   display: flex;
   gap: 1rem;
 }
-
 
 footer{
   background-color: $secondary;

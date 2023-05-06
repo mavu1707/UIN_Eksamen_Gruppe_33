@@ -5,16 +5,17 @@ export default function MyGamesDashboard() {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    fetch('https://api.rawg.io/api/games?key=5ccfb72ca6634a3bbf2e095d139c75c9&genres=action&page_size=4')
+    fetch('https://api.rawg.io/api/games?key=5ccfb72ca6634a3bbf2e095d139c75c9&genres=puzzle&page_size=4')
       .then((response) => response.json())
       .then((data) => {
-        const actionGames = data.results;
-        setGames(actionGames);
+        const puzzleGames = data.results;
+        setGames(puzzleGames);
       });
   }, []);
 
   return (
     <article className="my-games-dashboard">
+    <h1>My Games</h1>
       <div className="game-card-container">
         {games.map((game) => (
           <GameCard
