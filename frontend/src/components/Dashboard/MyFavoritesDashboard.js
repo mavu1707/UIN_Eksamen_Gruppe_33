@@ -15,7 +15,6 @@ export default function MyFavoritesDashboard() {
 
   return (
     <article className="my-favorites-dashboard">
-      <h1>My favorites</h1>
       <div className="game-card-container">
         {games.map((game) => (
           <GameCard

@@ -66,6 +66,14 @@ article{
   }
 }
 
+.test {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: $maxWidth;
+  margin: 0 auto;
+}
+
 .featured-games {
   background-color: $back;
   padding: 2rem;
@@ -81,13 +89,15 @@ article{
   flex-wrap: wrap;
   margin-top: 2rem;
   justify-content: center;
+  width: 750px;
+  padding-bottom: 2rem;
 
   .game-card-container {
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 4rem;
+    gap: 1.2rem;
   }
 }
 

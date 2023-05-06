@@ -15,7 +15,6 @@ export default function MyGamesDashboard() {
 
   return (
     <article className="my-games-dashboard">
-    <h1>My Games</h1>
       <div className="game-card-container">
         {games.map((game) => (
           <GameCard

@@ -6,8 +6,10 @@ export default function Dashboard() {
   return (
     <>
       <FeaturedGames />
-      <MyGamesDashboard />
-      <MyFavoritesDashboard/>
+      <div className='test'>
+        <MyGamesDashboard />
+        <MyFavoritesDashboard/>
+      </div>
     </>
   );
 }
