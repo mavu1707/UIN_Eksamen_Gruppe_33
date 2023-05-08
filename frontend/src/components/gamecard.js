@@ -2,12 +2,20 @@ import React, { useState } from 'react';
 
 export default function GameCard(props) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [favorites, setFavorites] = useState([]);
 
   const handleFavoriteClick = () => {
     setIsFavorite(!isFavorite);
-    props.onFavoriteToggle(props.id);
+    if (!isFavorite) {
+      if (props.game) { // check if props.game is defined
+        setFavorites([...favorites, { name: props.game.name, imageUrl: props.game.background_image }]); // add only the name and imageUrl to favorites
+      }
+    } else {
+      setFavorites(favorites.filter(fav => fav.name !== props.game.name));
+    }
+    console.log(favorites);
   };
-
+  
   return (
     <article className="game-card">
       <h2 className="game-card-title">{props.title}</h2>

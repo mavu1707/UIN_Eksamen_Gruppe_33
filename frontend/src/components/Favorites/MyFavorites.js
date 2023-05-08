@@ -1,24 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import GameCard from '../GameCard';
-import { Link } from 'react-router-dom';
 
-export default function MyFavorites({ games, onFavoriteToggle }) {
+export default function MyFavorites() {
+  const [favorites, setFavorites] = useState([]);
+
+  const handleFavoriteClick = (game) => {
+    if (!favorites.includes(game)) {
+      setFavorites([...favorites, game]);
+    } else {
+      setFavorites(favorites.filter((fav) => fav !== game));
+    }
+  };
 
   return (
-    <article className="my-games">
+    <section>
+      <h1>My Favorites</h1>
       <div className="game-card-container">
-        {games.map((game) => (
-          <Link to={`/game/${game.slug}`} key={game.id}>
-            <GameCard
-              title={game.name}
-              genre={game.genres.map((genre) => genre.name).join(', ')}
-              imageUrl={game.background_image}
-              isFavorite={game.isFavorite}
-              onFavoriteToggle={() => onFavoriteToggle(game.id)}
-            />
-          </Link>
+        {favorites.map((game) => (
+          <GameCard
+            key={game.id}
+            title={game.name}
+            genre={game.genres.map((genre) => genre.name).join(', ')}
+            imageUrl={game.background_image}
+            isFavorite={true}
+            handleFavoriteClick={() => handleFavoriteClick(game)}
+          />
         ))}
       </div>
-    </article>
+    </section>
   );
 }

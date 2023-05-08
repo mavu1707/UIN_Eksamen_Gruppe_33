@@ -1,44 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import MyFavorites from '../Favorites/MyFavorites';
+import React, { useState } from 'react';
+import MyFavorites from '../Favorites/MyFavorites'
+import GameCard from '../GameCard';
 
-export default function MyFavoritesDashboard({ indieGames }) {
-  const [favorites, setFavorites] = useState(indieGames.slice(0, 4));
-  const [games, setGames] = useState([]);
+export default function MyFavoritesDashboard() {
+  const [favorites, setFavorites] = useState([]);
 
-  const handleFavoriteToggle = (id) => {
-    const updatedGames = games.map((game) => {
-      if (game.id === id) {
-        return { ...game, isFavorite: !game.isFavorite };
-      } else {
-        return game;
-      }
-    });
-    setGames(updatedGames);
-
-    const updatedFavorites = updatedGames.filter((game) => game.isFavorite);
-    setFavorites(updatedFavorites);
+  const addFavorite = (game) => {
+    setFavorites([...favorites, game]);
   };
 
-  useEffect(() => {
-    fetch('https://api.rawg.io/api/games?key=5ccfb72ca6634a3bbf2e095d139c75c9')
-      .then((response) => response.json())
-      .then((data) => {
-        const favoriteGames = data.results.filter((game) => favorites.includes(game.id)).map((game) => ({
-          ...game,
-          slug: game.name.toLowerCase().replace(/ /g, '-'),
-          isFavorite: true
-        }));
-        setGames(favoriteGames);
-      });
-  }, [favorites]);
+  const removeFavorite = (gameId) => {
+    setFavorites(favorites.filter((fav) => fav.id !== gameId));
+  };
 
   return (
-    <div>
-      <article className="my-favorites-dashboard">
-        <Link to="/myfavorites"><h2>My Favorites</h2></Link>
-        <MyFavorites games={games} onFavoriteToggle={handleFavoriteToggle} />
-      </article>
-    </div>
+    <section>
+      <h1>My Favorites</h1>
+      <div className="game-card-container">
+        {favorites.map((favorite) => (
+          <GameCard
+            key={favorite.id}
+            game={favorite}
+            onAddToFavorites={addFavorite}
+            onRemoveFromFavorites={removeFavorite}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
