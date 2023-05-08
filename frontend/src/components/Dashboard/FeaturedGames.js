@@ -19,7 +19,7 @@ export default function FeaturedGames() {
 
   return (
     <article className="featured-games">
-      <h1>Game Shop</h1>
+    <Link to="/gameshop"><h1>Game Shop</h1></Link>
       <div className="game-card-container">
         {games.map((game) => (
           <Link to={`/game/${game.slug}`} key={game.id}>
