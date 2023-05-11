@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import MyFavorites from '../Favorites/MyFavorites'
 import GameCard from '../GameCard';
 
 export default function MyFavoritesDashboard() {

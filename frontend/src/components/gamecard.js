@@ -7,8 +7,8 @@ export default function GameCard(props) {
   const handleFavoriteClick = () => {
     setIsFavorite(!isFavorite);
     if (!isFavorite) {
-      if (props.game) { // check if props.game is defined
-        setFavorites([...favorites, { name: props.game.name, imageUrl: props.game.background_image }]); // add only the name and imageUrl to favorites
+      if (props.game) {
+        setFavorites([...favorites, { name: props.game.name, imageUrl: props.game.background_image }]); 
       }
     } else {
       setFavorites(favorites.filter(fav => fav.name !== props.game.name));
