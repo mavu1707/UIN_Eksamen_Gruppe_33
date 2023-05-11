@@ -18,7 +18,7 @@ export default function MyGames() {
   }, []);
 
   return (
-    <article className="my-games">
+    <article className="game-view">
       <div className="game-card-container">
         {games.map((game) => (
           <Link to={`/game/${game.slug}`} key={game.id}>
