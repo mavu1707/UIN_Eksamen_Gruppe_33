@@ -135,10 +135,14 @@ article{
 
 .my-favorites-dashboard {
   background-color: $back;
-  padding: 2rem;
+  margin-top: 3rem;
+  padding: 0 2rem;
   border-radius: 1rem;
-  margin-top: 1rem;
-  width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 750px;
+  padding-bottom: 2rem;
 
   h2{
     color: aliceblue;
@@ -146,13 +150,11 @@ article{
   }
 
   .game-card-container {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 1rem;
-
-    .game-card {
-      width: 300px;
-    }
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
   }
 }
 
@@ -310,6 +312,13 @@ footer{
   }
   
   .my-games-dashboard {
+    .game-card-container{
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  }
+
+  .my-favorites-dashboard {
     .game-card-container{
       grid-template-columns: 1fr;
       grid-template-rows: auto;

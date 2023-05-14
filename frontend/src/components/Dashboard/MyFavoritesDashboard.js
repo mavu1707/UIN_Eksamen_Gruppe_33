@@ -23,19 +23,21 @@ export default function MyFavoritesDashboard() {
   
 
   return (
-    <section>
+    <article className='my-favorites-dashboard'>
       <h1>My Favorites</h1>
       <div className="game-card-container">
         {favorites.map((favorite) => (
           <GameCard
             key={favorite.id}
             game={favorite}
+            name={favorite.name}
+            imageUrl={favorite.background_image}
             onAddToFavorites={addFavorite}
             onRemoveFromFavorites={removeFavorite}
             isFavorite={favorites.some((fav) => fav.id === favorite.id)}
           />
         ))}
       </div>
-    </section>
+    </article>
   );
 }
