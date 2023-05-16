@@ -4,7 +4,7 @@ import GameShop from '../GameShop/GameShop';
 import MyGames from '../MyGames/MyGames';
 import MyFavorites from '../Favorites/MyFavorites';
 import Dashboard from '../Dashboard/Dashboard';
-import GamePage from '../GamePage';
+import GamePage from '../GameCardPage/GamePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default function Layout() {

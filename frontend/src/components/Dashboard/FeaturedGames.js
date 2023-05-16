@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import GameCard from '../GameCard';
+import GameCard from '../GameCardPage/GameCard';
 import { Link } from 'react-router-dom';
 
 export default function FeaturedGames() {

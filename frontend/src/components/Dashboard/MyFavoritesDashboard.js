@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import GameCard from '../GameCard';
+import GameCard from '../GameCardPage/GameCard';
 
 export default function MyFavoritesDashboard() {
   const [favorites, setFavorites] = useState([]);
