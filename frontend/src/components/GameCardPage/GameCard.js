@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function GameCard(props) {
   const [isFavorite, setIsFavorite] = useState(false);
-  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    setIsFavorite(props.isFavorite);
+  }, [props.isFavorite]);
 
   const handleFavoriteClick = () => {
     setIsFavorite(!isFavorite);
+
     if (!isFavorite) {
-      if (props.game) {
-        setFavorites([...favorites, { name: props.game.name, imageUrl: props.game.background_image }]); 
-      }
+      props.onAddToFavorites(props.game);
     } else {
-      setFavorites(favorites.filter(fav => fav.name !== props.game.name));
+      props.onRemoveFromFavorites(props.game);
     }
-    console.log(favorites);
   };
-  
+
   return (
     <article className="game-card">
       <h2>{props.title}</h2>

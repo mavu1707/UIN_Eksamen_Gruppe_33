@@ -66,10 +66,6 @@ article{
     border-radius: 2rem;
     box-shadow: 0.5rem 0.5rem $black;
 
-    :hover{
-      cursor: pointer;
-    }
-
     button{
       background-color: $text;
       color: $black;
@@ -79,6 +75,11 @@ article{
       border-style: none;
       font-weight: bold;
     }
+
+    button:hover{
+      cursor: pointer;
+    }
+
   }
 
   img{
