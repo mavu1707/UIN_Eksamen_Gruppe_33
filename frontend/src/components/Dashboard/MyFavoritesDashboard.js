@@ -1,23 +1,24 @@
-import React from 'react';
 import GameCard from '../GameCardPage/GameCard';
+import { Link } from 'react-router-dom';
 
 export default function MyFavoritesDashboard({ favorites, removeFavorite }) {
-  console.log(favorites);
   return (
     <article className="my-favorites-dashboard">
-      <h1>My Favorites</h1>
+      <Link to="/myfavorites">
+        <h1>My Favorites</h1>
+      </Link>
       <div className="game-card-container">
-      {favorites.map((favorites) => (
-        <GameCard
-          key={favorites.id}
-          game={favorites}
-          title={favorites.name}
-          imageUrl={favorites.background_image}
-          onRemoveFromFavorites={() => removeFavorite(favorites.id)}
-          isFavorite={true}
-        />
-      ))}
-    </div>
+        {favorites.map((favorite) => (
+          <GameCard
+            key={favorite.id}
+            game={favorite}
+            title={favorite.name}
+            imageUrl={favorite.background_image}
+            onRemoveFromFavorites={() => removeFavorite(favorite.id)}
+            isFavorite={true}
+          />
+        ))}
+      </div>
     </article>
   );
 }
