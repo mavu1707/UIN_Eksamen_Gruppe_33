@@ -10,6 +10,9 @@ body{
   font-family: 'Comme', sans-serif;
   background-color: $primary;
   color: $text;
+  a{
+    color: $text;
+  }
 }
 
 header{
@@ -86,6 +89,11 @@ article{
     width: 100%;
     height: auto;
     object-fit: cover;
+  }
+
+  a{
+    margin: 1rem;
+    padding-bottom: 1rem;
   }
 }
 

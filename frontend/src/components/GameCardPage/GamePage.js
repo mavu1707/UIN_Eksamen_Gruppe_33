@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function GamePage() {
-  const { slug } = useParams();
-  const [game, setGame] = useState({});
+  const { slug } = useParams()
+  const [game, setGame] = useState({})
 
   useEffect(() => {
     fetch(`https://api.rawg.io/api/games?search=${slug}&key=5ccfb72ca6634a3bbf2e095d139c75c9`)
       .then((response) => response.json())
       .then((data) => {
-        setGame(data.results.find((result) => result.slug === slug));
-      });
-  }, [slug]);
+        setGame(data.results.find((result) => result.slug === slug))
+      })
+
+  }, [slug])
 
   return (
     <article className="game-page">

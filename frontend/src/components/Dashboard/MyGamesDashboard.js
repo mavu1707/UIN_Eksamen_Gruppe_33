@@ -3,7 +3,7 @@ import GameCard from '../GameCardPage/GameCard';
 import { Link } from 'react-router-dom';
 
 export default function MyGamesDashboard({ favorites, addFavorite, removeFavorite }) {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState([])
 
   useEffect(() => {
     fetch('https://api.rawg.io/api/games?key=5ccfb72ca6634a3bbf2e095d139c75c9&genres=indie&page_size=4')
@@ -12,10 +12,12 @@ export default function MyGamesDashboard({ favorites, addFavorite, removeFavorit
         const indieGames = data.results.map((game) => ({
           ...game,
           slug: game.name.toLowerCase().replace(/ /g, '-'),
-        }));
-        setGames(indieGames);
-      });
-  }, []);
+
+        }))
+
+        setGames(indieGames)
+      })
+  }, [])
 
   return (
     <article className="my-games-dashboard">

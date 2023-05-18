@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false)
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu);
+    setShowMenu(!showMenu)
   }
 
   return (

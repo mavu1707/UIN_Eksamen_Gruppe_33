@@ -3,7 +3,7 @@ import GameCard from '../GameCardPage/GameCard';
 import { Link } from 'react-router-dom';
 
 export default function MyGames() {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState([])
 
   useEffect(() => {
     fetch('https://api.rawg.io/api/games?key=5ccfb72ca6634a3bbf2e095d139c75c9&genres=puzzle&page_size=20')
@@ -12,10 +12,11 @@ export default function MyGames() {
         const puzzleGames = data.results.map(game => ({
           ...game,
           slug: game.name.toLowerCase().replace(/ /g, '-')
-        }));
+        }))
+
         setGames(puzzleGames);
-      });
-  }, []);
+      })
+  }, [])
 
   return (
     <article className="game-view">

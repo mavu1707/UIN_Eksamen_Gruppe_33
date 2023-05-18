@@ -4,28 +4,29 @@ import MyGamesDashboard from './MyGamesDashboard';
 import MyFavoritesDashboard from './MyFavoritesDashboard';
 
 export default function Dashboard() {
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
-    const storedFavorites = localStorage.getItem('favorites');
+    const storedFavorites = localStorage.getItem('favorites')
+
     if (storedFavorites) {
-      setFavorites(JSON.parse(storedFavorites));
+      setFavorites(JSON.parse(storedFavorites))
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  }, [favorites]);
+    localStorage.setItem('favorites', JSON.stringify(favorites))
+  }, [favorites])
 
   const addFavorite = (game) => {
-    setFavorites((prevFavorites) => [...prevFavorites, game]);
+    setFavorites((prevFavorites) => [...prevFavorites, game])
   };
 
   const removeFavorite = (gameId) => {
     setFavorites((prevFavorites) =>
       prevFavorites.filter((fav) => fav.id !== gameId)
-    );
-  };
+    )
+  }
 
   return (
     <>
